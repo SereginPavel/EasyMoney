@@ -5,4 +5,8 @@ node {
     stage('build'){
         bat 'mvn verify'
     }
+    stage('test'){
+    }
+    stage(install){
+    }
  }
