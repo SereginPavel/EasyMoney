@@ -1,15 +1,41 @@
-pipeline {
-    agent any
+stage 'Init'
+node {
+    stage 'Environment'
+    sh 'export'
 
-    stages {
-        stage('Compile Stage'){
+    stage 'Create file'
+    sh 'touch test.txt'
 
-        }
-        stage('Build'){
+    stage 'List relative Directory'
+    sh 'ls ../../../../../'
 
-        }
-        stage('Test'){
+    stage 'List / dir'
+    sh 'ls /'
 
-        }
-    }
+    stage 'List Home of user'
+    sh 'ls $HOME'
+
+    stage 'List Home of agent'
+    sh 'ls $JENKINS_HOME'
+
+    stage 'List temp'
+    sh 'ls $TMPDIR'
+
+    stage 'List job dir'
+    sh '''
+        echo $(pwd)
+        ls .
+        ls $(pwd)
+        '''
+
+    stage 'download file'
+    def out='$(pwd)/download/maven.tgz'
+    sh 'mkdir -p ./download'
+    sh 'curl -L http://ftp.cixug.es/apache/maven/maven-3/3.3.9/binaries/apache-maven-3.3.9-bin.tar.gz -o ' + out
+
+    stage 'move/rename'
+    def newName = 'mvn.tgz'
+    sh 'mkdir -p $(pwd)/other'
+    sh 'mv ' + out + ' ' + newName
+    sh 'cp ' + newName + ' ' + out
 }
