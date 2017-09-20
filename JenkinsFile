@@ -10,8 +10,4 @@ node {
      stage('Install') {
         bat 'copy.bat'
      }
-
-    stage('Start Server ') {
-            bat 'startServer.bat'
-    }
  }
