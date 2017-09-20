@@ -7,4 +7,3 @@ node {
         bat 'mvn verify'
     }
  }
- }
