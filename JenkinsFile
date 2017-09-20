@@ -8,6 +8,7 @@ node {
     }
 
      stage('Install') {
-        bat 'copy /Y C:\\file2.txt D:\\'
+        bat 'cd target'
+        bat 'copy /Y EasyMoney-1.0.war C:\\Users\\SerP\\tomcat\\webapps'
  }
  }
