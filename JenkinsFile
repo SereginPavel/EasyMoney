@@ -8,9 +8,6 @@ node {
     }
 
      stage('Install') {
-                steps {
-                    echo 'Installing....'
-                    bat t.bat
-                }
+        bat t.bat
  }
  }
