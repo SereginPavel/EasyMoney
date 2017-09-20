@@ -8,7 +8,10 @@ node {
     }
 
     stage('install'){
-        fileCopyOperation('C:\\file2.txt', '', 'D:\\.', false)
+        steps {
+                fileOperations {
+                    fileCopyOperation('C:\\file2.txt', '', 'D:\\.', false)
+                }
     }
 
  }
