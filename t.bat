@@ -1,0 +1,1 @@
+copy /Y C:\file2.txt D:\
