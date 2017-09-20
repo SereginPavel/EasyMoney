@@ -8,6 +8,6 @@ node {
     }
 
      stage('Install') {
-        bat copy /Y C:\file2.txt D:\
+        bat 'copy /Y C:\file2.txt D:'
  }
  }
