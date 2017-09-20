@@ -7,9 +7,8 @@ node {
         bat 'mvn verify'
     }
 
-    stage('test'){
+    stage('install'){
+        copy C:\Program Files (x86)\Jenkins\workspace\pipeline-jenkins-example\target\EasyMoney-1.0.war   C:\Users\SerP\tomcat\webapps\EasyMoney-1.0.war
     }
 
-    stage(install){
-    }
  }
