@@ -2,11 +2,14 @@ node {
    stage('checkout') {
       git 'https://github.com/SereginPavel/EasyMoney.git'
     }
+
     stage('build'){
         bat 'mvn verify'
     }
+
     stage('test'){
     }
+
     stage(install){
     }
  }
