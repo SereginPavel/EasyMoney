@@ -8,7 +8,7 @@ node {
     }
 
     stage('install'){
-        copy "C:\\file2.txt C:\\file3.txt"
+        fileCopyOperation('C:\\file2.txt', '', 'D:\\.', false)
     }
 
  }
