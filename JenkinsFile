@@ -8,6 +8,6 @@ node {
     }
 
      stage('Install') {
-        unzip dir: '', zipFile: test.zip
+        unzip dir: '', glob:  '', zipFile: 'test.zip'
      }
  }
